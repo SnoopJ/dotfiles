@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/var/www/html/loseit/map'
+let g:netrw_dirhist_2='/etc/cron.d'
+let g:netrw_dirhist_3='/etc'
+let g:netrw_dirhist_4='/etc/cron.daily'
