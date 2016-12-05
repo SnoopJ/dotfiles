@@ -1,1 +1,0 @@
-/home/snoopjedi/dotfiles/.vimrc
