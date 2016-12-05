@@ -15,3 +15,7 @@ ln -sfbv "$DOTFILES_DIR/.bashrc" ~
 ln -sfbv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfbv "$DOTFILES_DIR/.vim" ~
 ln -sfbv "$DOTFILES_DIR/.vimrc" ~
+
+# .local/bin
+mkdir -p ~/.local/bin
+cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
