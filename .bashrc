@@ -10,6 +10,7 @@ fi
 
 # User specific aliases and functions
 
+. ~/.local/bin/z.sh
 
 function irclog() {
         usage="irclog -- helper function to search IRC logs.  Passes all flags to ag.  Use -G mask to search against a glob"

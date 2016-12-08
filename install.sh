@@ -19,3 +19,7 @@ ln -sfbv "$DOTFILES_DIR/.vimrc" ~
 # .local/bin
 mkdir -p ~/.local/bin
 cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
+
+# .local/share/man
+mkdir -p ~/.local/share/man
+cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
