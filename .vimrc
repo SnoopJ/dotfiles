@@ -17,8 +17,8 @@ set tabstop=4
 set shiftwidth=4
 
 " Buffer navigation
-map <C-H> :bp!
-map <C-L> :bn!
+map <C-H> :bp!<ENTER>
+map <C-L> :bn!<ENTER>
 
 " netrw fixins from https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0
