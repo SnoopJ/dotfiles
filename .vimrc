@@ -9,6 +9,7 @@ set smartcase
 set scrolloff=7
 " number labels
 set number
+set nowrap
 
 " Tabbing
 set expandtab
