@@ -11,7 +11,9 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # -b option will create a backup if destination already exists
-ln -sfbv "$DOTFILES_DIR/.bashrc" ~
+#ln -sfbv "$DOTFILES_DIR/.bashrc" ~
+echo "#### Added by dotfiles ####" >> ~/.bashrc
+echo "source \"$DOTFILES_DIR/.bashrc\"" >> ~/.bashrc
 ln -sfbv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfbv "$DOTFILES_DIR/.vim" ~
 ln -sfbv "$DOTFILES_DIR/.vimrc" ~
