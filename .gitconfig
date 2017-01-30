@@ -1,0 +1,11 @@
+# FIRST TIME: replace the <values>
+[user]
+	name = James Gerity
+	email = snoopjedi@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = less
+    editor = vim
+# If not git 2.x, you may have to comment these out
+[push]
+    default = simple

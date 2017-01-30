@@ -17,6 +17,7 @@ cat "$DOTFILES_DIR/.bashrc.patch" >> ~/.bashrc
 ln -sfbv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfbv "$DOTFILES_DIR/.vim" ~
 ln -sfbv "$DOTFILES_DIR/.vimrc" ~
+ln -sfbv "$DOTFILES_DIR/.gitconfig" ~
 
 # .local/bin
 mkdir -p ~/.local/bin
