@@ -1,4 +1,4 @@
-# .bashrc
+#### ADDED BY /home/vagrant/dotfiles/install.sh ####
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -9,8 +9,6 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
-. ~/.local/bin/z.sh
 
 function irclog() {
         usage="irclog -- helper function to search IRC logs.  Passes all flags to ag.  Use -G mask to search against a glob"
@@ -34,3 +32,4 @@ function irclog() {
         ag -i "$@" ~/irclogs;
 }
 
+source ~/.local/bin/z.sh
