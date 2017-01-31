@@ -4,7 +4,7 @@ Requires=local-fs.target
 After=local-fs.target
 
 [Service]
-ExecStart=/usr/local/bin/jupyter-notebook --ip 0.0.0.0 --notebook-dir /home/vagrant/
+ExecStart=/home/vagrant/miniconda3/bin/jupyter-notebook --ip 0.0.0.0 --notebook-dir /home/vagrant/
 User=vagrant
 
 [Install]
