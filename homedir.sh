@@ -11,13 +11,21 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # -b option will create a backup if destination already exists
-cp -fbv ~/.bashrc ~/.bashrc.bak
-echo -e "\n#### ADDED BY $DOTFILES_DIR/install.sh ####\n" >> ~/.bashrc
-cat "$DOTFILES_DIR/.bashrc.patch" >> ~/.bashrc
-ln -sfbv "$DOTFILES_DIR/.tmux.conf" ~
-ln -sfbv "$DOTFILES_DIR/.vim" ~
-ln -sfbv "$DOTFILES_DIR/.vimrc" ~
-ln -sfbv "$DOTFILES_DIR/.gitconfig" ~
+function addtorc() {
+    if ! grep -q "$1" ~/.bashrc || [ -z "~/.bashrc" ]; then
+        echo -e "\n#### ADDED BY $DOTFILES_DIR/install.sh ####" >> ~/.bashrc
+        echo "$1" >> ~/.bashrc
+    fi
+}
+
+addtorc "source $DOTFILES_DIR/git-prompt.sh"
+addtorc "source $DOTFILES_DIR/.bashrc.patch"
+
+ln -sfb "$DOTFILES_DIR/.tmux.conf" ~
+mkdir -p ~/.vim
+cp -sfb "$DOTFILES_DIR/.vim"/* ~/.vim/
+ln -sfb "$DOTFILES_DIR/.vimrc" ~
+ln -sfb "$DOTFILES_DIR/.gitconfig" ~
 
 # .local/bin
 mkdir -p ~/.local/bin
@@ -26,3 +34,4 @@ cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
 # .local/share/man
 mkdir -p ~/.local/share/man
 cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
+

@@ -9,3 +9,7 @@
 # If not git 2.x, you may have to comment these out
 [push]
     default = simple
+[color]
+	ui = auto
+	branch = auto
+	status = auto
