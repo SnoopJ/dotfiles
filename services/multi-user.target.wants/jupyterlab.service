@@ -1,0 +1,11 @@
+[Unit]
+Description=Jupyter Notebook
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+ExecStart=/home/vagrant/miniconda3/bin/jupyter lab --ip 0.0.0.0 --notebook-dir /home/vagrant/
+User=vagrant
+
+[Install]
+WantedBy=multi-user.target
