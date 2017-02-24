@@ -8,6 +8,8 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+source ~/.local/bin/z.sh
+
 # User specific aliases and functions
 
 function irclog() {
@@ -32,7 +34,14 @@ function irclog() {
         ag -i "$@" ~/irclogs;
 }
 
-source ~/.local/bin/z.sh
+function opal() {
+    LOGFILE="opal$(date -I).log"
+    $(which opal) "$@" 2>&1 | tee $LOGFILE;
+    echo
+    echo checking $LOGFILE for warnings or errors now...
+    echo
+    grep -iE -A3 "warning|error" $LOGFILE;
+}
 
 if command -v git >/dev/null 2>&1; then
     # A git-aware prompt
