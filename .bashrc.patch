@@ -12,6 +12,9 @@ source ~/.local/bin/z.sh
 
 # User specific aliases and functions
 
+# Show PEP 20, the Zen of Python
+alias zen='python -c "import this"'
+
 function irclog() {
         usage="irclog -- helper function to search IRC logs.  Passes all flags to ag.  Use -G mask to search against a glob"
 
