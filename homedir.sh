@@ -29,6 +29,10 @@ ln -sfb "$DOTFILES_DIR/.gitconfig" ~
 mkdir -p ~/.config/matplotlib
 ln -sfb "$DOTFILES_DIR/.config/matplotlib/matplotlibrc" ~/.config/matplotlib/matplotlibrc
 
+# ssh config
+mkdir -p ~/.ssh
+ln -sfb "$DOTFILES_DIR/.ssh/config" ~/.ssh/config
+
 # .local/bin
 mkdir -p ~/.local/bin
 cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
