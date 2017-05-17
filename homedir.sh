@@ -18,9 +18,6 @@ function addtorc() {
     fi
 }
 
-addtorc "source $DOTFILES_DIR/git-prompt.sh"
-addtorc "source $DOTFILES_DIR/.bashrc.patch"
-
 ln -sfb "$DOTFILES_DIR/.tmux.conf" ~
 mkdir -p ~/.vim
 cp -sfb "$DOTFILES_DIR/.vim"/* ~/.vim/
@@ -43,3 +40,6 @@ cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
 mkdir -p ~/.local/share/man
 cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 
+addtorc "source $DOTFILES_DIR/git-prompt.sh"
+addtorc "source $DOTFILES_DIR/.bashrc.patch"
+addtorc "source ~/.local/bin/z.sh"
