@@ -13,3 +13,5 @@
 	ui = auto
 	branch = auto
 	status = auto
+[alias]
+    resetauthor = commit --amend --reset-author
