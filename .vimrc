@@ -10,8 +10,9 @@ set scrolloff=7
 " number labels
 set number
 set nowrap
-" Mark column 79
-set colorcolumn=79
+" Mark columns 72,79
+set colorcolumn=72,79
+set textwidth=79
 
 " Tabbing
 set expandtab
