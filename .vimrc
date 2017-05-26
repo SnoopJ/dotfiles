@@ -19,6 +19,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" Tab completion in command mode (e.g. :help partial-topic<TAB>)
+set wildmenu
+
 " Buffer navigation
 map <C-H> :bp!<ENTER>
 map <C-L> :bn!<ENTER>
