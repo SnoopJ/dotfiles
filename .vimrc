@@ -9,6 +9,7 @@ set smartcase
 set scrolloff=7
 " number labels
 set number
+set relativenumber
 set nowrap
 " Mark columns 72,79
 set colorcolumn=72,79
