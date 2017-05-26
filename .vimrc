@@ -32,12 +32,6 @@ set wildmenu
 map <C-H> :bp!<ENTER>
 map <C-L> :bn!<ENTER>
 
-" Note that these remaps eliminate the possibility of using 'm' as a mark
-" List all marks
-noremap mm :marks<ENTER> 
-" Clear all marks in current buffer
-noremap dmm :delmarks!
-
 " netrw fixins from https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
