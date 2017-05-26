@@ -5,6 +5,8 @@ set autochdir
 " When searching try to be smart about cases 
 set ignorecase
 set smartcase
+set nohlsearch
+
 " 7 lines to cursor
 set scrolloff=7
 " number labels
