@@ -2,17 +2,20 @@ syntax on
 
 " Change dir based on file
 set autochdir
-" When searching try to be smart about cases 
+
+" Searching
 set ignorecase
 set smartcase
 set nohlsearch
 
 " 7 lines to cursor
 set scrolloff=7
+
 " number labels
 set number
 set relativenumber
 set nowrap
+
 " Mark columns 72,79
 set colorcolumn=72,79
 set textwidth=79
