@@ -98,3 +98,4 @@ let g:hardtime_showmsg = 1
 
 " Rebuild documentation for plugins
 :Helptags
+" foobar
