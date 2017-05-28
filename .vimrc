@@ -81,6 +81,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_section_b="Modified: %{strftime('%H:%M %Z %x',getftime(expand('%')))}"
 
 " Scheme fixins
 set t_Co=256
