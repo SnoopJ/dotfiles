@@ -18,7 +18,6 @@ set nowrap
 
 " Mark columns 72,79
 set colorcolumn=72,79
-set textwidth=79
 
 " Tabbing
 set expandtab
