@@ -7,6 +7,8 @@
 
 # Show PEP 20, the Zen of Python
 alias zen='python -c "import this"'
+
+# For working with zestyping's Python lib `q`
 alias q='rm -f /tmp/q && tail -F /tmp/q'
 
 function irclog() {
@@ -31,6 +33,8 @@ function irclog() {
         ag -i "$@" ~/irclogs;
 }
 
+# Run OPAL but save the output to a timestamped logfile. Display all
+# warnings/errors at the end of the run to save the user some scrolling
 function opal() {
     LOGFILE="opal$(date -I).log"
     $(which opal) "$@" 2>&1 | tee $LOGFILE;
@@ -40,6 +44,7 @@ function opal() {
     grep -iE -A3 "warning|error" $LOGFILE;
 }
 
+# Git-aware prompt (if available)
 if command -v git >/dev/null 2>&1; then
     # A git-aware prompt
     export GIT_PS1_SHOWCOLORHINTS=true
