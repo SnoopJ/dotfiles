@@ -1,0 +1,15 @@
+<Multi_key> <greater> <_> <greater> : "😒" U1F612 # unamused
+<Multi_key> <A> <A> : "∀" U2200 # FOR ALL
+<Multi_key> <E> <E> : "∃" U2203 # THERE EXISTS
+<Multi_key> <C> <minus> : "∈" U2208 # ELEMENT OF
+<Multi_key> <C> <slash> <minus> : "∉" U2209 # NOT AN ELEMENT OF
+<Multi_key> <period> <colon> : "∴" U2234 # THEREFORE
+<Multi_key> <colon> <colon> : "∷" U2237 # PROPORTION
+<Multi_key> <colon> <apostrophe> <D> : "😂" U1F602 # FACE WITH TEARS OF JOY
+
+# I'll use <Multi_key> <:> to separate things I type semi-explicitly
+<Multi_key> <colon> <j> <o> <y> : "😂" U1F602 # FACE WITH TEARS OF JOY
+<Multi_key> <colon> <f> <l> <e> <x> : "💪" U1F4AA # biceps
+<Multi_key> <colon> <f> <i> <r> <e> : "🔥" U1F525 # flame
+<Multi_key> <colon> <i> <n> <f> : "∞" U221E # INFINITY
+<Multi_key> <colon> <1> <0> <0> : "💯" U1F4AF # hundred points

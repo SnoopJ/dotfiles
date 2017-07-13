@@ -23,6 +23,7 @@ mkdir -p ~/.vim
 cp -sfb "$DOTFILES_DIR/.vim"/* ~/.vim/
 ln -sfb "$DOTFILES_DIR/.vimrc" ~
 ln -sfb "$DOTFILES_DIR/.gitconfig" ~
+cp -sfb "$DOTFILES_DIR/.gitignore_global" ~
 mkdir -p ~/.config/matplotlib
 ln -sfb "$DOTFILES_DIR/.config/matplotlib/matplotlibrc" ~/.config/matplotlib/matplotlibrc
 
