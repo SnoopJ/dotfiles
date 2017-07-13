@@ -49,6 +49,9 @@ else
     export PS1='\A [\u \W]\$ '
 fi
 
+# don't ever open a GUI to ask for SSH credentials
+unset SSH_ASKPASS
+
 # Courtesy of StackOverflow user Pablo R. https://unix.stackexchange.com/a/1292
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups  
