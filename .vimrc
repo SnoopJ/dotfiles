@@ -27,6 +27,9 @@ set shiftwidth=4
 " Tab completion in command mode (e.g. :help partial-topic<TAB>)
 set wildmenu
 
+" Pre-populate registers with some useful snippets
+let @i = "import code; code.interact(local=locals())\n"
+
 " Buffer navigation
 map <C-H> :bp!<ENTER>
 map <C-L> :bn!<ENTER>
