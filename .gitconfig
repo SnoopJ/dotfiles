@@ -15,3 +15,4 @@
 	status = auto
 [alias]
     resetauthor = commit --amend --reset-author
+    alias = config --get-regexp ^alias\\.  # thanks to StackOverflow user rednaw for this https://stackoverflow.com/a/7067489
