@@ -42,8 +42,9 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 " MAD-X specifics
-au BufNewFile,BufRead *.mdx setf madx
-au BufNewFile,BufRead *.srv set nowrap
+autocmd BufNewFile,BufRead *.mdx setfiletype madx
+autocmd BufNewFile,BufRead *.md setfiletype markdown
+autocmd BufNewFile,BufRead *.srv set nowrap
 
 " Courtesy of StackOverflow user jqno, with a custom toggle function
 " http://stackoverflow.com/a/1676672/2881396
