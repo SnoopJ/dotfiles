@@ -18,12 +18,21 @@ function addtorc() {
     fi
 }
 
+# tmux
 ln -sfb "$DOTFILES_DIR/.tmux.conf" ~
+
+# vim
 mkdir -p ~/.vim
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/swp
 cp -sfb "$DOTFILES_DIR/.vim"/* ~/.vim/
 ln -sfb "$DOTFILES_DIR/.vimrc" ~
+
+# git
 ln -sfb "$DOTFILES_DIR/.gitconfig" ~
 cp -sfb "$DOTFILES_DIR/.gitignore_global" ~
+
+# matplotlib
 mkdir -p ~/.config/matplotlib
 ln -sfb "$DOTFILES_DIR/.config/matplotlib/matplotlibrc" ~/.config/matplotlib/matplotlibrc
 

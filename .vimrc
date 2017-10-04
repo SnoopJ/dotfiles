@@ -30,6 +30,12 @@ set wildmenu
 " Pre-populate registers with some useful snippets
 let @i = "import code; code.interact(local=locals())\n"
 
+" Put swap/backup files in a single place instead of polluting CWD
+" Courtesy of Hacker News user parfe: https://news.ycombinator.com/item?id=1690673
+" N.B. these directories must exist, or vim will fall back on .
+set backupdir^=~/.vim/backup//
+set directory^=~/.vim/swp//
+
 " Buffer navigation
 map <C-H> :bp!<ENTER>
 map <C-L> :bn!<ENTER>
