@@ -33,6 +33,18 @@ set wildmenu
 " Map sequence gqq to format the current paragraph
 noremap gqq gqap
 
+" If we opened vim without any specified file, bring up 
+" a list of recent files
+function RecentFilesList()
+    if @% == ""
+        " No filename for current buffer
+        browse oldfiles
+    endif
+endfunction
+
+au VimEnter * call RecentFilesList()
+        
+
 " Pre-populate registers with some useful snippets
 let @i = "import code; code.interact(local=locals())\n"
 
