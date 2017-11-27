@@ -114,3 +114,16 @@ let g:hardtime_showmsg = 1
 " Rebuild documentation for plugins
 :Helptags
 " foobar
+
+" vim, what the hell is the name of the C-style function I'm looking at 
+" right now?  " Courtesy of StackOverflow user manav m-n: 
+" https://stackoverflow.com/a/23259759/2881396
+fun! ShowFuncName()
+  let lnum = line(".")
+  let col = col(".")
+  echohl ModeMsg
+  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+  echohl None
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
+command FunctionName call ShowFuncName()
