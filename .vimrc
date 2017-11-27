@@ -30,6 +30,9 @@ set shiftwidth=4
 " Tab completion in command mode (e.g. :help partial-topic<TAB>)
 set wildmenu
 
+" Map sequence gqq to format the current paragraph
+noremap gqq gqap
+
 " Pre-populate registers with some useful snippets
 let @i = "import code; code.interact(local=locals())\n"
 
