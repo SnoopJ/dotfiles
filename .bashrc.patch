@@ -6,7 +6,7 @@
 # User specific aliases and functions
 
 # Show PEP 20, the Zen of Python
-alias zen='python -c "import this"'
+alias zen='python -m this'
 
 # For working with zestyping's Python lib `q`
 alias q='rm -f /tmp/q && tail -F /tmp/q'
