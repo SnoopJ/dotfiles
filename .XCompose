@@ -1,4 +1,4 @@
-<Multi_key> <greater> <_> <greater> : "😒" U1F612 # unamused
+﻿<Multi_key> <greater> <_> <greater> : "😒" U1F612 # unamused
 <Multi_key> <A> <A> : "∀" U2200 # FOR ALL
 <Multi_key> <E> <E> : "∃" U2203 # THERE EXISTS
 <Multi_key> <C> <minus> : "∈" U2208 # ELEMENT OF
@@ -6,6 +6,7 @@
 <Multi_key> <period> <colon> : "∴" U2234 # THEREFORE
 <Multi_key> <colon> <colon> : "∷" U2237 # PROPORTION
 <Multi_key> <colon> <apostrophe> <D> : "😂" U1F602 # FACE WITH TEARS OF JOY
+<Multi_key> <d> <e> <l> : "∇"    U2207      # NABLA
 
 # I'll use <Multi_key> <:> to separate things I type semi-explicitly
 <Multi_key> <colon> <j> <o> <y> : "😂" U1F602 # FACE WITH TEARS OF JOY
