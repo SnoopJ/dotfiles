@@ -11,6 +11,14 @@ alias zen='python -m this'
 # For working with zestyping's Python lib `q`
 alias q='rm -f /tmp/q && tail -F /tmp/q'
 
+# For quickly grabbing the newest or oldest files with `ls`
+function newest {
+    ls "$@" --sort=time | head -1
+}
+function oldest {
+    ls "$@" --sort=time | tac | head -1
+}
+
 function irclog() {
         usage="irclog -- helper function to search IRC logs.  Passes all flags to ag.  Use -G mask to search against a glob"
 
