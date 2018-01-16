@@ -53,4 +53,3 @@ cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 addtorc "source $DOTFILES_DIR/git-prompt.sh"
 addtorc "source $DOTFILES_DIR/.bashrc.patch"
 addtorc "source ~/.local/bin/z.sh"
-addtorc "PATH=~/.local/bin:$PATH"
