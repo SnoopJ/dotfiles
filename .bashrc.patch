@@ -95,3 +95,12 @@ export COMSOLDIR=/apps/comsol/4.3a/COMSOL43a/
 function whoisusingcomsol() {
     $COMSOLDIR/license/glnxa64/lmstat -c $COMSOLDIR/license/license.dat -f
 }
+
+# Try to fetch updates if it's been longer than a day since the last attempt
+dotfiles_update_dt=$(echo "($(date +%s) - $(stat -c %Y $DOTFILES_DIR/.git/FETCH_HEAD)) / 60 / 60 / 24" | bc)
+if [ $dotfiles_update_dt -gt 1 ]; then
+    printf $YELLOW
+    echo "$dotfiles_update_dt days since dotfiles update was fetched, pulling..."
+    printf $RESETCOLOR
+    [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master >/dev/null 2>&1
+fi
