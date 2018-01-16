@@ -65,6 +65,9 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
+" Syntax highlighting when modifying dotfiles additions to bashrc
+autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
+
 " MAD-X specifics
 autocmd BufNewFile,BufRead *.mdx setfiletype madx
 autocmd BufNewFile,BufRead *.md setfiletype markdown
