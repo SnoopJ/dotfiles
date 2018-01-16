@@ -3,11 +3,9 @@
 
 # Get current dir (so run this script from anywhere)
 
-export DOTFILES_DIR EXTRA_DIR
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Update dotfiles itself first
-
 #[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # -b option will create a backup if destination already exists
@@ -50,6 +48,10 @@ cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
 mkdir -p ~/.local/share/man
 cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 
-addtorc "source $DOTFILES_DIR/git-prompt.sh"
-addtorc "source $DOTFILES_DIR/.bashrc.patch"
+addtorc "export DOTFILES_DIR=\"$DOTFILES_DIR\""
+addtorc "source \$DOTFILES_DIR/git-prompt.sh"
 addtorc "source ~/.local/bin/z.sh"
+
+# Source the .bashrc.patch file *last*, so that any changes we make there
+# will win in a conflict.
+addtorc "source \$DOTFILES_DIR/.bashrc.patch"
