@@ -21,6 +21,9 @@ export PATH=~/.local/bin:~/.local/usr/bin:$PATH
 
 # User specific aliases and functions
 
+# Elegant definitions file
+export RPN_DEFNS="$DOTFILES_DIR/elegant_defns.rpn"
+
 # Show PEP 20, the Zen of Python
 alias zen='python -m this'
 
