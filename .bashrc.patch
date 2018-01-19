@@ -105,5 +105,5 @@ if [ $dotfiles_update_dt -gt 1 ]; then
     printf $YELLOW
     echo "$dotfiles_update_dt days since dotfiles update was fetched, pulling..."
     printf $RESETCOLOR
-    [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master >/dev/null 2>&1
+    [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 fi
