@@ -123,6 +123,10 @@ set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
 
+" Highlight sloppy language as if it were an error
+syntax keyword WeaselWords Clearly clearly Obviously obviously
+highlight link WeaselWords ErrorMsg
+
 " vim-hardtime config, to limit my habit of holding hjkl
 let g:hardtime_default_on = 1
 let g:hardtime_timeout = 2000
