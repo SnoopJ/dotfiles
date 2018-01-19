@@ -17,12 +17,15 @@ set scrolloff=7
 " number labels
 set number
 set relativenumber
+
 set nowrap
 
-" Mark columns 72,79
+" Mark columns 72,79 so we have a sense for how long a line is getting
+" (72 characters is the recommended length for comments and docstrings
+" in PEP 8
 set colorcolumn=72,79
 
-" Tabbing
+" Tabs are four spaces, Linus Torvalds be damned
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -44,7 +47,6 @@ endfunction
 
 au VimEnter * call RecentFilesList()
         
-
 " Pre-populate registers with some useful snippets
 let @i = "import code; code.interact(local=locals())\n"
 
@@ -111,6 +113,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" And the modification time
 let g:airline_section_b="Modified: %{strftime('%H:%M %Z %x',getftime(expand('%')))}"
 
 " Scheme fixins
@@ -120,15 +123,15 @@ set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
 
-" vim-hardtime config
+" Highlight sloppy language as if it were an error
+syntax keyword WeaselWords Clearly clearly Obviously obviously
+highlight link WeaselWords ErrorMsg
+
+" vim-hardtime config, to limit my habit of holding hjkl
 let g:hardtime_default_on = 1
 let g:hardtime_timeout = 2000
 let g:hardtime_maxcount = 15
 let g:hardtime_showmsg = 1
-
-" Rebuild documentation for plugins
-:Helptags
-" foobar
 
 " vim, what the hell is the name of the C-style function I'm looking at 
 " right now?  " Courtesy of StackOverflow user manav m-n: 
@@ -142,3 +145,6 @@ fun! ShowFuncName()
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
 command FunctionName call ShowFuncName()
+
+" Rebuild documentation for plugins
+:Helptags

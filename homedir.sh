@@ -11,7 +11,7 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # -b option will create a backup if destination already exists
 function addtorc() {
     if ! grep -q "$1" ~/.bashrc || [ -z "~/.bashrc" ]; then
-        echo -e "\n#### ADDED BY $DOTFILES_DIR/install.sh ####" >> ~/.bashrc
+        echo -e "\n#### ADDED BY $DOTFILES_DIR/homedir.sh ####" >> ~/.bashrc
         echo "$1" >> ~/.bashrc
     fi
 }
