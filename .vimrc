@@ -74,6 +74,13 @@ autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
 autocmd BufNewFile,BufRead *.mdx setfiletype madx
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.srv set nowrap
+"
+" Highlight sloppy language as if it were an error
+syntax keyword WeaselWords Clearly clearly Obviously obviously
+highlight link WeaselWords ErrorMsg
+
+" fenced syntax highlighting for code blocks in Markdown
+let g:markdown_fenced_languages = ['cpp', 'madx', 'js', 'python']
 
 " Courtesy of StackOverflow user jqno, with a custom toggle function
 " http://stackoverflow.com/a/1676672/2881396
@@ -122,10 +129,6 @@ let g:solarized_termcolors = &t_Co
 set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
-
-" Highlight sloppy language as if it were an error
-syntax keyword WeaselWords Clearly clearly Obviously obviously
-highlight link WeaselWords ErrorMsg
 
 " vim-hardtime config, to limit my habit of holding hjkl
 let g:hardtime_default_on = 1
