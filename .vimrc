@@ -80,7 +80,7 @@ syntax keyword WeaselWords Clearly clearly Obviously obviously
 highlight link WeaselWords ErrorMsg
 
 " fenced syntax highlighting for code blocks in Markdown
-let g:markdown_fenced_languages = ['cpp', 'madx', 'js', 'python']
+let g:markdown_fenced_languages = ['cpp', 'madx', 'javascript', 'python']
 
 " Courtesy of StackOverflow user jqno, with a custom toggle function
 " http://stackoverflow.com/a/1676672/2881396
