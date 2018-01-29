@@ -51,6 +51,7 @@ cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 addtorc "export DOTFILES_DIR=\"$DOTFILES_DIR\""
 addtorc "source \$DOTFILES_DIR/git-prompt.sh"
 addtorc "source ~/.local/bin/z.sh"
+addtorc "export PYTHONPATH=\"$PYTHONPATH:$DOTFILES_DIR/recipes\""
 
 # Source the .bashrc.patch file *last*, so that any changes we make there
 # will win in a conflict.
