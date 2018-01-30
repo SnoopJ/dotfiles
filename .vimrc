@@ -110,6 +110,18 @@ function! ToggleComment(commentchar) range
     exe "normal " . a:firstline . "gg"
 endfunction
 
+" Map key to toggle opt, from
+" http://vim.wikia.com/wiki/Quick_generic_option_toggling
+function MapToggle(key, opt)
+  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+  exec 'nnoremap '.a:key.' '.cmd
+  exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+" Toggle scrollbind on/off with F10
+MapToggle <F10> scrollbind
+
 "  *** VISUALS ***
 execute pathogen#infect()
 let g:solarized_italic=0
