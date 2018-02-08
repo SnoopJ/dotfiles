@@ -36,7 +36,7 @@ ln -sfb "$DOTFILES_DIR/.config/matplotlib/matplotlibrc" ~/.config/matplotlib/mat
 
 # ssh config
 mkdir -p ~/.ssh
-ln -sfb "$DOTFILES_DIR/.ssh/config" ~/.ssh/config
+ln -sfb "$DOTFILES_DIR/.ssh/config"* ~/.ssh/config
 # permissions matter for .ssh/config
 chmod 600 ~/.ssh/config
 
@@ -51,6 +51,7 @@ cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 addtorc "export DOTFILES_DIR=\"$DOTFILES_DIR\""
 addtorc "source \$DOTFILES_DIR/git-prompt.sh"
 addtorc "source ~/.local/bin/z.sh"
+addtorc "export PYTHONPATH=\"$PYTHONPATH:$DOTFILES_DIR/recipes\""
 
 # Source the .bashrc.patch file *last*, so that any changes we make there
 # will win in a conflict.

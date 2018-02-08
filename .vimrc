@@ -74,6 +74,13 @@ autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
 autocmd BufNewFile,BufRead *.mdx setfiletype madx
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.srv set nowrap
+"
+" Highlight sloppy language as if it were an error
+syntax keyword WeaselWords Clearly clearly Obviously obviously
+highlight link WeaselWords ErrorMsg
+
+" fenced syntax highlighting for code blocks in Markdown
+let g:markdown_fenced_languages = ['cpp', 'madx', 'javascript', 'python']
 
 " Courtesy of StackOverflow user jqno, with a custom toggle function
 " http://stackoverflow.com/a/1676672/2881396
@@ -103,6 +110,18 @@ function! ToggleComment(commentchar) range
     exe "normal " . a:firstline . "gg"
 endfunction
 
+" Map key to toggle opt, from
+" http://vim.wikia.com/wiki/Quick_generic_option_toggling
+function MapToggle(key, opt)
+  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+  exec 'nnoremap '.a:key.' '.cmd
+  exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+" Toggle scrollbind on/off with F10
+MapToggle <F10> scrollbind
+
 "  *** VISUALS ***
 execute pathogen#infect()
 let g:solarized_italic=0
@@ -122,10 +141,6 @@ let g:solarized_termcolors = &t_Co
 set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
-
-" Highlight sloppy language as if it were an error
-syntax keyword WeaselWords Clearly clearly Obviously obviously
-highlight link WeaselWords ErrorMsg
 
 " vim-hardtime config, to limit my habit of holding hjkl
 let g:hardtime_default_on = 1

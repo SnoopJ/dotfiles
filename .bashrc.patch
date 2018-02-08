@@ -17,7 +17,7 @@ LPURPLE='\033[01;35m'
 LCYAN='\033[01;36m'
 WHITE='\033[01;37m'
 
-export PATH=~/.local/bin:~/.local/usr/bin:$PATH
+export PATH=$PATH:~/.local/bin:~/.local/usr/bin
 
 # User specific aliases and functions
 
