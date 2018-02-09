@@ -21,6 +21,9 @@ export PATH=$PATH:~/.local/bin:~/.local/usr/bin
 
 # User specific aliases and functions
 
+# package history, useful for tracking customizations in Vagrant
+alias apt-history="grep -i \"commandline\" /var/log/apt/history.log"
+
 # Elegant definitions file
 export RPN_DEFNS="$DOTFILES_DIR/elegant_defns.rpn"
 
