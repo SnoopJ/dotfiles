@@ -29,7 +29,7 @@ COPYRIGHT_HOLDERS=$2
 
 # Source: http://opensource.org/licenses/MIT
 
-cat > LICENSE << EOF
+cat << EOF
 
 The MIT License (MIT)
 
