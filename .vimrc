@@ -1,4 +1,5 @@
 syntax on
+filetype indent plugin on
 
 " Change dir based on file
 set autochdir
