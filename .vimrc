@@ -34,6 +34,10 @@ set shiftwidth=4
 " Tab completion in command mode (e.g. :help partial-topic<TAB>)
 set wildmenu
 
+" Bugfix for LogiPat plugin shadowing :E for :Explore
+" Courtesy of StackOverflow user melpomene, https://stackoverflow.com/a/31695784/2881396
+let g:loaded_logipat = 1
+
 " Map sequence gqq to format the current paragraph
 noremap gqq gqap
 
