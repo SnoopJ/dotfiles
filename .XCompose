@@ -7,6 +7,7 @@
 <Multi_key> <colon> <colon> : "∷" U2237 # PROPORTION
 <Multi_key> <colon> <apostrophe> <D> : "😂" U1F602 # FACE WITH TEARS OF JOY
 <Multi_key> <d> <e> <l> : "∇"    U2207      # NABLA
+<Multi_key> <less> <3> : "💙" U1F499  # BLUE HEART
 
 # I'll use <Multi_key> <:> to separate things I type semi-explicitly
 <Multi_key> <colon> <j> <o> <y> : "😂" U1F602 # FACE WITH TEARS OF JOY
