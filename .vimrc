@@ -77,8 +77,10 @@ autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
 
 " MAD-X specifics
 autocmd BufNewFile,BufRead *.mdx setfiletype madx
-autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.srv set nowrap
+
+" I mean Markdown when I have .md, not Modula-2!
+autocmd BufNewFile,BufRead *.md setfiletype markdown
 "
 " Highlight sloppy language as if it were an error
 syntax keyword WeaselWords Clearly clearly Obviously obviously
