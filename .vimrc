@@ -4,6 +4,10 @@ filetype indent plugin on
 " Change dir based on file
 set autochdir
 
+" Persistent undo (guess why I included this?)
+set undofile
+set undodir=~/.vim/undo
+
 " Searching
 set ignorecase
 set smartcase
@@ -54,6 +58,10 @@ au VimEnter * call RecentFilesList()
         
 " Pre-populate registers with some useful snippets
 let @i = "import code; code.interact(local=locals())\n"
+function NumpyDoc()
+    :read ~/.vim/templates/numpydoc_method_short.py
+endfunction
+command NumpyDoc call NumpyDoc()
 
 " Put swap/backup files in a single place instead of polluting CWD
 " Courtesy of Hacker News user parfe: https://news.ycombinator.com/item?id=1690673

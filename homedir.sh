@@ -26,6 +26,7 @@ ln -sfb "$DOTFILES_DIR/.tmux.conf" ~
 mkdir -p ~/.vim
 mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/swp
+mkdir -p ~/.vim/undo
 cp -sfbr "$DOTFILES_DIR/.vim"/* ~/.vim/
 ln -sfb "$DOTFILES_DIR/.vimrc" ~
 
