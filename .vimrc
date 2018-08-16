@@ -128,6 +128,9 @@ endfunction
 " Toggle scrollbind on/off with F10
 map <F10> :set scrollbind!<CR>:set scrollbind?<CR>
 
+" Toggle line numbering with F5, useful for copying in KiTTY
+map <F5> :set number!<CR>:set relativenumber!<CR>
+
 "  *** VISUALS ***
 execute pathogen#infect()
 let g:solarized_italic=0
