@@ -46,11 +46,11 @@ chmod 600 ~/.ssh/config
 
 # .local/bin
 mkdir -p ~/.local/bin
-cp -sbv "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
+cp -sb "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
 
 # .local/share/man
 mkdir -p ~/.local/share/man
-cp -srbv "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
+cp -srb "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 
 addtorc "export DOTFILES_DIR=\"$DOTFILES_DIR\""
 addtorc "source \$DOTFILES_DIR/git-prompt.sh"
