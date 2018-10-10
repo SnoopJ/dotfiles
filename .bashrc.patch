@@ -110,3 +110,6 @@ if [ $dotfiles_update_dt -gt 1 ]; then
     printf $RESETCOLOR
     [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 fi
+
+source "$DOTFILES_DIR/git-prompt.sh"
+export PYTHONPATH="$PYTHONPATH:$DOTFILES_DIR/recipes"
