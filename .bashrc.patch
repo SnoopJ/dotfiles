@@ -79,7 +79,7 @@ if command -v git >/dev/null 2>&1; then
     # A git-aware prompt
     export GIT_PS1_SHOWCOLORHINTS=true
     export GIT_PS1_SHOWDIRTYSTATE=true
-    export PROMPT_COMMAND='__git_ps1 "\A [\u \W" "]\$ "'
+    export PROMPT_COMMAND='__git_ps1 "\A [\u@\h \W" "]\$ "'
 else
     export PS1='\A [\u \W]\$ '
 fi
