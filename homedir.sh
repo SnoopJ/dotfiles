@@ -41,6 +41,7 @@ ln -sfb "$DOTFILES_DIR/.config/matplotlib/matplotlibrc" ~/.config/matplotlib/mat
 # ssh config
 mkdir -p ~/.ssh
 ln -sfb "$DOTFILES_DIR/.ssh/config"* ~/.ssh/config
+cp -sfb $DOTFILES_DIR/id_rsa*.pub ~/.ssh
 # permissions matter for .ssh/config
 chmod 600 ~/.ssh/config
 
