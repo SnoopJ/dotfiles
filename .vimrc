@@ -170,5 +170,12 @@ fun! ShowFuncName()
 endfun
 command FunctionName call ShowFuncName()
 
+" required for vim compiled with dynamic Python
+let g:jedi#force_py_version = 3
+" disable immediate completion of Python
+let g:jedi#popup_on_dot = 0
+" don't automatically complete `from x` with `import`, it's jarring!
+let g:jedi#smart_auto_mappings = 0
+
 " Rebuild documentation for plugins
 :Helptags
