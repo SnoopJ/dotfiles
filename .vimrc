@@ -153,7 +153,7 @@ let g:airline_theme='solarized'
 
 " vim-hardtime config, to limit my habit of holding hjkl
 let g:hardtime_default_on = 1
-let g:hardtime_timeout = 2000
+let g:hardtime_timeout = 750
 let g:hardtime_maxcount = 15
 let g:hardtime_showmsg = 1
 
