@@ -56,12 +56,12 @@ endfunction
 
 au VimEnter * call RecentFilesList()
         
-" Pre-populate registers with some useful snippets
-let @i = "import code; code.interact(local=locals())\n"
-function NumpyDoc()
-    :read ~/.vim/templates/numpydoc_method_short.py
-endfunction
-command NumpyDoc call NumpyDoc()
+" Snippets for things I'd have to otherwise look up. Some of these use :read,
+" some use :edit! to open the file in a new buffer for yanking
+command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
+
+command ArgparseTemplate :read ~/.vim/templates/argparse.py
+command ScriptMain :read ~/.vim/templates/script_main.py
 
 " Put swap/backup files in a single place instead of polluting CWD
 " Courtesy of Hacker News user parfe: https://news.ycombinator.com/item?id=1690673
@@ -89,7 +89,7 @@ autocmd BufNewFile,BufRead *.srv set nowrap
 
 " I mean Markdown when I have .md, not Modula-2!
 autocmd BufNewFile,BufRead *.md setfiletype markdown
-"
+
 " Highlight sloppy language as if it were an error
 syntax keyword WeaselWords Clearly clearly Obviously obviously
 highlight link WeaselWords ErrorMsg
