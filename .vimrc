@@ -90,6 +90,18 @@ autocmd BufNewFile,BufRead *.srv set nowrap
 " I mean Markdown when I have .md, not Modula-2!
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 
+if !empty(glob("~/.vim/plugin/black.vim"))
+    let g:black_enabled = 0  " disabled by default for now...
+    function! PyBlack()
+        if g:black_enabled > 0
+            exe "Black"
+        endif
+    endfunction
+
+    " Automatically run Python through the Black formatter if enabled
+    autocmd BufWritePre *.py :call PyBlack()
+endif
+
 " Highlight sloppy language as if it were an error
 syntax keyword WeaselWords Clearly clearly Obviously obviously
 highlight link WeaselWords ErrorMsg
