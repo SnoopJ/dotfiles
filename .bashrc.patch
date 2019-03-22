@@ -74,6 +74,11 @@ function opal() {
     grep -iE -A3 "warning|error" $LOGFILE;
 }
 
+# shortcut for searching running processes
+function psg() {
+    ps aux | grep -i $*
+}
+
 # Git-aware prompt (if available)
 if command -v git >/dev/null 2>&1; then
     # A git-aware prompt
