@@ -39,6 +39,14 @@ set shiftwidth=4
 " Tab completion in command mode (e.g. :help partial-topic<TAB>)
 set wildmenu
 
+" If we're in cursorbind mode with more than one window, just redraw the screen every time we navigate. 
+" Probably pretty slow, but that's why there's a flag
+let g:redraw_when_bound=1
+nnoremap <expr> h (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "h:redraw!<CR>:echo('hi')<CR>" : 'h' 
+nnoremap <expr> j (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "j:redraw!<CR>:echo('hi')<CR>" : 'j' 
+nnoremap <expr> k (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "k:redraw!<CR>:echo('hi')<CR>" : 'k' 
+nnoremap <expr> l (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "l:redraw!<CR>:echo('hi')<CR>" : 'l' 
+
 " Bugfix for LogiPat plugin shadowing :E for :Explore
 " Courtesy of StackOverflow user melpomene, https://stackoverflow.com/a/31695784/2881396
 let g:loaded_logipat = 1
