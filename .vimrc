@@ -17,7 +17,7 @@ set nohlsearch
 set cursorline
 set cursorcolumn
 
-" 7 lines to cursor
+" 7 lines of margin around the cursor
 set scrolloff=7
 
 " number labels
@@ -28,7 +28,7 @@ set nowrap
 
 " Mark columns 72,79 so we have a sense for how long a line is getting
 " (72 characters is the recommended length for comments and docstrings
-" in PEP 8
+" in PEP 8)
 set colorcolumn=72,79
 
 " Tabs are four spaces, Linus Torvalds be damned
