@@ -13,8 +13,9 @@ set ignorecase
 set smartcase
 set nohlsearch
 
-" Enable cursor line
+" Show location of cursor
 set cursorline
+set cursorcolumn
 
 " 7 lines to cursor
 set scrolloff=7
