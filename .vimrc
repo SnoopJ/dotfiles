@@ -57,6 +57,11 @@ noremap gqq gqap
 " Courtesy of the vim community https://vim.fandom.com/wiki/Underline_using_dashes_automatically
 nnoremap <Leader>u yyp<c-v>$r-
 
+
+" Searchable analogue of `:browse oldfiles`, with thanks to StackOverflow user
+" Ingo Karkat, https://stackoverflow.com/a/21938644/2881396
+:command! Browse2 :new +setl\ buftype=nofile | 0put =v:oldfiles | nnoremap <buffer> <CR> :e <C-r>=getline('.')<CR><CR> | :normal gg
+
 " Map <leader>i to pipe the current selection (or entire file) to ix.io for a quick paste
 " Courtesy of Omar Abou Mrad: http://aboumrad.info/faster-pastes-with-ix-io.html
 noremap <silent> <leader>i :w !ix<CR>
