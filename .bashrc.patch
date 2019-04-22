@@ -65,14 +65,21 @@ function irclog() {
 
 # Run OPAL but save the output to a timestamped logfile. Display all
 # warnings/errors at the end of the run to save the user some scrolling
-function opal() {
-    LOGFILE="opal$(date -I).log"
-    $(which opal) "$@" 2>&1 | tee $LOGFILE;
-    echo
-    echo checking $LOGFILE for warnings or errors now...
-    echo
-    grep -iE -A3 "warning|error" $LOGFILE;
+function run_opal() {
+    if hash opal 2>/dev/null; then
+        LOGFILE="opal$(date -I).log"
+        $(which opal) "$@" 2>&1 | tee $LOGFILE;
+        echo
+        echo checking $LOGFILE for warnings or errors now...
+        echo
+        grep -iE -A3 "warning|error" $LOGFILE;
+    else
+        echo -en $RED
+        echo 'cannot find OPAL, did you source opal.sh?'
+        echo -en $RESETCOLOR
+    fi
 }
+alias opal='run_opal'
 
 # shortcut for searching running processes
 function psg() {
