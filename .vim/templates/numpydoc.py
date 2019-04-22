@@ -1,6 +1,9 @@
 """
-This file is a truncation of the numpy docstring standard (https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
-with examples that can be quickly yanked into another file.
+This file is a truncation of the numpy docstring standard with examples that
+can be quickly yanked into another file.
+
+For the full standard, see:
+https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard
 """
 
 def somefunc(foo, bar, baz=None, order, x, y):
