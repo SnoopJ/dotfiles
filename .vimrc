@@ -54,6 +54,9 @@ let g:loaded_logipat = 1
 " Map sequence gqq to format the current paragraph
 noremap gqq gqap
 
+" Courtesy of the vim community https://vim.fandom.com/wiki/Underline_using_dashes_automatically
+nnoremap <Leader>u yyp<c-v>$r-
+
 " Map <leader>i to pipe the current selection (or entire file) to ix.io for a quick paste
 " Courtesy of Omar Abou Mrad: http://aboumrad.info/faster-pastes-with-ix-io.html
 noremap <silent> <leader>i :w !ix<CR>
