@@ -53,6 +53,19 @@ let g:loaded_logipat = 1
 
 " Map sequence gqq to format the current paragraph
 noremap gqq gqap
+"
+" Buffer navigation
+map <C-H> :bp!<ENTER>
+map <C-L> :bn!<ENTER>
+"
+" weirdly, Ctrl+/ is recognized as Ctrl+_ ?
+noremap <silent> <C-_> :call ToggleComment(b:comment_leader)<CR>
+"
+" Toggle scrollbind on/off with F10
+map <F10> :set scrollbind!<CR>:set scrollbind?<CR>
+
+" Toggle line numbering with F5, useful for copying in KiTTY
+map <F5> :set number!<CR>:set relativenumber!<CR>
 
 " Courtesy of the vim community https://vim.fandom.com/wiki/Underline_using_dashes_automatically
 nnoremap <Leader>u yyp<c-v>$r-
@@ -89,10 +102,6 @@ command ScriptMain :read ~/.vim/templates/script_main.py
 " N.B. these directories must exist, or vim will fall back on .
 set backupdir^=~/.vim/backup//
 set directory^=~/.vim/swp//
-
-" Buffer navigation
-map <C-H> :bp!<ENTER>
-map <C-L> :bn!<ENTER>
 
 " netrw fixins from https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0
@@ -140,8 +149,6 @@ autocmd FileType tex              let b:comment_leader = '% '
 autocmd FileType mail             let b:comment_leader = '> '
 autocmd FileType vim              let b:comment_leader = '" '
 autocmd FileType madx             let b:comment_leader = '! '
-" weirdly, Ctrl+/ is recognized as Ctrl+_ ?
-noremap <silent> <C-_> :call ToggleComment(b:comment_leader)<CR>
 
 function! ToggleComment(commentchar) range
     let lnum = a:firstline
@@ -158,11 +165,6 @@ function! ToggleComment(commentchar) range
     exe "normal " . a:firstline . "gg"
 endfunction
 
-" Toggle scrollbind on/off with F10
-map <F10> :set scrollbind!<CR>:set scrollbind?<CR>
-
-" Toggle line numbering with F5, useful for copying in KiTTY
-map <F5> :set number!<CR>:set relativenumber!<CR>
 
 "  *** VISUALS ***
 execute pathogen#infect()
