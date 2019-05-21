@@ -84,9 +84,13 @@ noremap <silent> <leader>i :w !ix<CR>
 function RecentFilesList()
     if @% == ""
         " No filename for current buffer
-        browse oldfiles
+        if g:browse_old_on_load > 0
+            exe "Browse2"
+        endif
     endif
 endfunction
+
+let g:browse_old_on_load=0
 
 au VimEnter * call RecentFilesList()
         
