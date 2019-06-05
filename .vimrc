@@ -218,3 +218,7 @@ let g:jedi#smart_auto_mappings = 0
 
 " Rebuild documentation for plugins
 :Helptags
+
+" I never really use modelines and don't much like the patch for this serious flaw:
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
