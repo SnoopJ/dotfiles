@@ -137,7 +137,7 @@ if !empty(glob("~/.vim/plugin/black.vim"))
 endif
 
 " Highlight sloppy language as if it were an error
-syntax keyword WeaselWords Clearly clearly Obviously obviously
+syntax keyword WeaselWords Clearly clearly Obviously obviously Trivial trivial
 highlight link WeaselWords ErrorMsg
 
 " fenced syntax highlighting for code blocks in Markdown
