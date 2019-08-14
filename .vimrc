@@ -99,6 +99,7 @@ au VimEnter * call RecentFilesList()
 command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
 
 command ArgparseTemplate :read ~/.vim/templates/argparse.py
+command ClickTemplate :read ~/.vim/templates/pyclick.py
 command ScriptMain :read ~/.vim/templates/script_main.py
 
 " Put swap/backup files in a single place instead of polluting CWD
