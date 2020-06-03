@@ -22,6 +22,10 @@ function addtorc() {
 # tmux
 ln -sfb "$DOTFILES_DIR/.tmux.conf" ~
 
+# i3
+mkdir -p ~/.config/i3
+ln -sfb "$DOTFILES_DIR/.config/i3/config" ~/.config/i3/config
+
 # vim
 mkdir -p ~/.vim
 mkdir -p ~/.vim/backup
