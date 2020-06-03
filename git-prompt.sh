@@ -513,8 +513,17 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
+    # jgerity: add warning for uninitialized top-level submodules (does *not* recurse)
+    if git submodule status | grep '^\S' >/dev/null 2>/dev/null
+    then
+        sm="💥"
+    else
+        sm=""
+    fi
+
+
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p"
+	local gitstring="$c$b${f:+$z$f}$r$p$sm"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then
