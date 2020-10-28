@@ -36,6 +36,10 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+" Give tabs and trailing spaces a visually distinct representation
+set list
+set listchars=tab:┌-┐,trail:·
+
 " Tab completion in command mode (e.g. :help partial-topic<TAB>)
 set wildmenu
 
