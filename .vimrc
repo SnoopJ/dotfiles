@@ -119,6 +119,10 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
+" Tabs are bad but we use them at work :(
+autocmd FileType cpp setlocal noexpandtab
+autocmd FileType cmake setlocal noexpandtab
+
 " Syntax highlighting when modifying dotfiles additions to bashrc
 autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
 
