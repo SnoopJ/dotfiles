@@ -104,6 +104,11 @@ else
     export PS1='\A [\u \W]\$ '
 fi
 
+# evaluate direnv hook, if present
+if command -v direnv >/dev/null 2>&1; then
+    eval "$(direnv hook bash)"
+fi
+
 # don't ever open a GUI to ask for SSH credentials
 unset SSH_ASKPASS
 
