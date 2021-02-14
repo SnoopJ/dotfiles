@@ -35,7 +35,7 @@ alias apt-history="grep -i \"commandline\" /var/log/apt/history.log"
 export RPN_DEFNS="$DOTFILES_DIR/elegant_defns.rpn"
 
 # Show PEP 20, the Zen of Python
-alias zen='python -m this'
+alias zen='python3 -m this'
 
 # For working with zestyping's Python lib `q`
 alias q='rm -f /tmp/q && tail -F /tmp/q'
