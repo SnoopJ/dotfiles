@@ -61,6 +61,9 @@ noremap gqq gqap
 " Buffer navigation
 map <C-H> :bp!<ENTER>
 map <C-L> :bn!<ENTER>
+" Close buffer
+nnoremap <Leader>d :bd<CR>
+
 "
 " weirdly, Ctrl+/ is recognized as Ctrl+_ ?
 noremap <silent> <C-_> :call ToggleComment(b:comment_leader)<CR>
