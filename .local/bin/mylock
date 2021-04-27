@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BGIMG="$HOME/.config/i3lock/bg.png"
+if [[ -f $BGIMG ]]; then
+    BGOPT="--image $BGIMG"
+else
+    echo "Image $BGIMG does not exist, omitting..."
+    BGOPT=""
+fi
+
+/usr/bin/i3lock --nofork -e $BGOPT

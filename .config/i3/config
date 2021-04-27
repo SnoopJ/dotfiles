@@ -46,6 +46,9 @@ bindsym $mod+Shift+q kill
 # Spotlight.app-like window switcher.  Combine run, window switcher, and application launcher.
 bindsym $mod+space  exec "rofi -combi-modi window,drun,run -modi combi -show combi -show-icons -theme gruvbox-dark-hard.rasi"
 
+# run a custom lock program, fall back on i3lock if need be
+bindsym $mod+grave exec "mylock || i3lock"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -184,3 +187,5 @@ bar {
 exec_always xmodmap -e "keycode 108 = Multi_key"
 
 for_window [class="SpeedCrunch"] floating enable, resize set 640 480
+
+workspace_layout stacking
