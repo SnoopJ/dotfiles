@@ -126,6 +126,9 @@ autocmd FileType cmake setlocal noexpandtab
 " Syntax highlighting when modifying dotfiles additions to bashrc
 autocmd BufNewFile,BufRead *.bashrc.patch setfiletype sh
 
+" Treat SWIG interface files like C++
+autocmd BufNewFile,BufRead *.i setfiletype cpp
+
 " MAD-X specifics
 autocmd BufNewFile,BufRead *.mdx setfiletype madx
 autocmd BufNewFile,BufRead *.srv set nowrap
