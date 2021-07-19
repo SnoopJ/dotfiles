@@ -185,6 +185,7 @@ bar {
 }
 
 exec_always xmodmap -e "keycode 108 = Multi_key"
+exec feh --bg-fill ~/.config/i3/right.png --bg-fill ~/.config/i3/left.png
 
 for_window [class="SpeedCrunch"] floating enable, resize set 640 480
 
