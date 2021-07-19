@@ -321,6 +321,11 @@ __git_ps1 ()
 		;;
 	esac
 
+    # jgerity: do nothing if the environment asked us not to
+    if [ -n "${GIT_PS1_DISABLE:+x}" ]; then
+        return $exit
+    fi
+
 	# ps1_expanded:  This variable is set to 'yes' if the shell
 	# subjects the value of PS1 to parameter expansion:
 	#
@@ -514,11 +519,14 @@ __git_ps1 ()
 	fi
 
     # jgerity: add warning for uninitialized top-level submodules (does *not* recurse)
-    if git submodule status | grep '^\S' >/dev/null 2>/dev/null
+    if [ -z "${GIT_PS1_NO_CHECK_SUBMODULES:+x}" ]
     then
-        sm="💥"
-    else
-        sm=""
+        if git submodule status | grep '^\S' >/dev/null 2>/dev/null
+        then
+            sm="💥"
+        else
+            sm=""
+        fi
     fi
 
 
