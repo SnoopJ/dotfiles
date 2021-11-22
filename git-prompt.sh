@@ -558,3 +558,9 @@ __git_ps1 ()
 
 	return $exit
 }
+
+
+git_ps1_help() {
+    printf "💥 - uninitialized submodules present\n"
+    printf "⏳ - stash present\n"
+}
