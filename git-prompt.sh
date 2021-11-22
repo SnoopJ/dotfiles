@@ -518,20 +518,32 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
-    # jgerity: add warning for uninitialized top-level submodules (does *not* recurse)
+    # jgerity: add symbol for uninitialized top-level submodules (does *not* recurse)
     if [ -z "${GIT_PS1_NO_CHECK_SUBMODULES:+x}" ]
     then
         if git submodule status | grep '^\S' >/dev/null 2>/dev/null
         then
-            sm="💥"
+            submodicon="💥"
         else
-            sm=""
+            submodicon=""
+        fi
+    fi
+
+
+    # jgerity: add symbol if a stash is present
+    if [ -z "${GIT_PS1_NO_CHECK_STASH:+x}" ]
+    then
+        if [[ "$(git stash list | wc -l)" -gt 0 ]]
+        then
+            stashicon="⏳"
+        else
+            stashicon=""
         fi
     fi
 
 
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p$sm"
+	local gitstring="$c$b${f:+$z$f}$r$p${submodicon}${stashicon}"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then
