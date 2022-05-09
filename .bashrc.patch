@@ -137,4 +137,4 @@ if [ $dotfiles_update_dt -gt 1 ]; then
 fi
 
 source "$DOTFILES_DIR/git-prompt.sh"
-export PYTHONPATH="$PYTHONPATH:$DOTFILES_DIR/recipes"
+#export PYTHONPATH="$PYTHONPATH:$DOTFILES_DIR/recipes"
