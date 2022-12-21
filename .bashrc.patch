@@ -17,13 +17,18 @@ LPURPLE='\033[01;35m'
 LCYAN='\033[01;36m'
 WHITE='\033[01;37m'
 
-export PATH=~/.local/bin:~/.local/usr/bin:$PATH
-
-if [ -d "$HOME/.pyenv" ] 
+# pyenv
+if [ -d "$HOME/.pyenv" ]
 then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
     eval "$($PYENV_ROOT/bin/pyenv init -)"
+fi
+
+# cargo
+if [ -d "$HOME/.cargo" ]
+then
+    export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # User specific aliases and functions
