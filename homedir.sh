@@ -57,9 +57,6 @@ cp -sb "$DOTFILES_DIR/.local/bin/"* ~/.local/bin
 mkdir -p ~/.local/share/man
 cp -srb "$DOTFILES_DIR/.local/share/man/"* ~/.local/share/man
 
-# direnv
-cp -sb "$DOTFILES_DIR/.direnvrc" ~/
-
 addtorc "export DOTFILES_DIR=\"$DOTFILES_DIR\""
 
 # Source the .bashrc.patch file *last*, so that any changes we make there
