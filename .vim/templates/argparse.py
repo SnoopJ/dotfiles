@@ -1,6 +1,6 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='A useful description of this script (might want to set this to __doc__)', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser = argparse.ArgumentParser(description='A useful description of this script', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('strarg', type=str, help='A string argument')
 parser.add_argument('numarg', type=float, help='A numerical argument')
 parser.add_argument('reqarg', type=float, help='A required argument', required=True)
