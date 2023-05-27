@@ -1,7 +1,3 @@
 A set of my personal dotfiles
 
-### TODO
-* [ ] git global config
-* [ ] Jupyter (nbextensions in particular)
-
-Based on https://github.com/webpro/dotfiles
+Inspired by but not meaningfully based on https://github.com/webpro/dotfiles
