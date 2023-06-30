@@ -103,10 +103,10 @@ au VimEnter * call RecentFilesList()
         
 " Snippets for things I'd have to otherwise look up. Some of these use :read,
 " some use :edit! to open the file in a new buffer for yanking
-command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
-
 command ArgparseTemplate :read ~/.vim/templates/argparse.py
+command BashHere :read ~/.vim/templates/bash_here
 command ClickTemplate :read ~/.vim/templates/pyclick.py
+command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
 command ScriptMain :read ~/.vim/templates/script_main.py
 
 " Put swap/backup files in a single place instead of polluting CWD
