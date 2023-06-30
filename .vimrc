@@ -51,6 +51,9 @@ nnoremap <expr> j (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "j:redr
 nnoremap <expr> k (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "k:redraw!<CR>:echo('hi')<CR>" : 'k' 
 nnoremap <expr> l (g:redraw_when_bound && winnr('$')>1 && &cursorbind) ? "l:redraw!<CR>:echo('hi')<CR>" : 'l' 
 
+" git-blame
+nnoremap gb :<C-u>call gitblame#echo()<CR>
+
 " Bugfix for LogiPat plugin shadowing :E for :Explore
 " Courtesy of StackOverflow user melpomene, https://stackoverflow.com/a/31695784/2881396
 let g:loaded_logipat = 1
