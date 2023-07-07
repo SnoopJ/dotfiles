@@ -1,0 +1,1 @@
+declare -r HERE="$(dirname "${BASH_SOURCE[0]}")"
