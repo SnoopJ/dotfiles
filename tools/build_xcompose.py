@@ -1,5 +1,5 @@
 """
-A tiny program I wrote to rebuild my .XCompose when I accidentally deleted it
+A program I wrote to rebuild my .XCompose when I accidentally deleted it
 """
 from functools import lru_cache
 import string
