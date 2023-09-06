@@ -1,7 +1,7 @@
 import click
 
 
-@click.command()
+@click.command(context_settings={"show_default": True})
 @click.option('--foo', default=1, help="Information about the foo parameter")
 @click.argument('bar', nargs=-1)
 def cli(foo, bar):
