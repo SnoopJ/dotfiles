@@ -1,10 +1,14 @@
 import click
 
+
 @click.command()
-@click.option('--foo', default=1, help="Lorem ipsum dolor sit amet")
-def main(count, name):
-    """ A program to put the lime in the coconut """
-    raise NotImplementedError
+@click.option('--foo', default=1, help="Information about the foo parameter")
+@click.argument('bar', nargs=-1)
+def cli(foo, bar):
+    """Information about this program"""
+    print(f"{foo = }")
+    print(f"{bar = }")
+
 
 if __name__ == '__main__':
-    main()
+    cli()
