@@ -29,7 +29,8 @@ set nowrap
 " Mark columns 72,79 so we have a sense for how long a line is getting
 " (72 characters is the recommended length for comments and docstrings
 " in PEP 8)
-set colorcolumn=72,79
+" 120 is my usual setting for line-width for e.g. black
+set colorcolumn=72,79,120
 
 " Tabs are four spaces, Linus Torvalds be damned
 set expandtab
