@@ -106,6 +106,7 @@ au VimEnter * call RecentFilesList()
 " some use :edit! to open the file in a new buffer for yanking
 command ArgparseTemplate :read ~/.vim/templates/argparse.py
 command BashHere :read ~/.vim/templates/bash_here
+command MakeHere :read ~/.vim/templates/gnuMake_here
 command ClickTemplate :read ~/.vim/templates/pyclick.py
 command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
 command ScriptMain :read ~/.vim/templates/script_main.py
