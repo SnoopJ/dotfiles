@@ -321,7 +321,7 @@ __git_ps1 ()
 		;;
 	esac
 
-    # jgerity: do nothing if the environment asked us not to
+    # SnoopJ: do nothing if the environment asked us not to
     if [ -n "${GIT_PS1_DISABLE:+x}" ]; then
         return $exit
     fi
@@ -518,7 +518,7 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
-    # jgerity: add symbol for uninitialized top-level submodules (does *not* recurse)
+    # SnoopJ: add symbol for uninitialized top-level submodules (does *not* recurse)
     if [ -z "${GIT_PS1_NO_CHECK_SUBMODULES:+x}" ]
     then
         if git submodule status | grep '^\S' >/dev/null 2>/dev/null
@@ -530,7 +530,19 @@ __git_ps1 ()
     fi
 
 
-    # jgerity: add symbol if a stash is present
+    # SnoopJ: add symbol for LFS objects that haven't been pulled
+    if [[ -d ".git/lfs" && -z "${GIT_PS1_NO_CHECK_LFS:+x}" ]]
+    then
+        if git lfs ls-files | cut -d' ' -f2 | grep '-' >/dev/null 2>/dev/null
+        then
+            lfsicon="👻"
+        else
+            lfsicon=""
+        fi
+    fi
+
+
+    # SnoopJ: add symbol if a stash is present
     if [ -z "${GIT_PS1_NO_CHECK_STASH:+x}" ]
     then
         if [[ "$(git stash list | wc -l)" -gt 0 ]]
@@ -543,7 +555,7 @@ __git_ps1 ()
 
 
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p${submodicon}${stashicon}"
+	local gitstring="$c$b${f:+$z$f}$r$p${submodicon}${stashicon}${lfsicon}"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then
