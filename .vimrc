@@ -26,10 +26,9 @@ set relativenumber
 
 set nowrap
 
-" Mark columns 72,79 so we have a sense for how long a line is getting
+" Mark columns 72,79,120 so we have a sense for how long a line is getting
 " (72 characters is the recommended length for comments and docstrings
 " in PEP 8)
-" 120 is my usual setting for line-width for e.g. black
 set colorcolumn=72,79,120
 
 " Tabs are four spaces, Linus Torvalds be damned
@@ -106,7 +105,6 @@ au VimEnter * call RecentFilesList()
 " some use :edit! to open the file in a new buffer for yanking
 command ArgparseTemplate :read ~/.vim/templates/argparse.py
 command BashHere :read ~/.vim/templates/bash_here
-command MakeHere :read ~/.vim/templates/gnuMake_here
 command ClickTemplate :read ~/.vim/templates/pyclick.py
 command NumpyDoc :edit! ~/.vim/templates/numpydoc.py
 command ScriptMain :read ~/.vim/templates/script_main.py
