@@ -45,11 +45,21 @@ alias zen='python3 -m this'
 # For working with zestyping's Python lib `q`
 alias q='rm -f /tmp/q && tail -F /tmp/q'
 
-# Run the specified command and beep when it's done
+# Run the specified command (including no command) and beep when it's done
 function beep {
     "$@"
     for i in {1..3}; do echo -e "\a"; sleep 0.25; done
 }
+
+# Run a command and Pod 042 or Pod 153 will tell you when it's done.
+# It's basically the beep() function but it plays a sound file instead.
+function podwatch {
+    "$@"
+    sound=$(shuf -n1 -e ~/pod153_keikoku.ogg ~/pod153_houkoku.ogg ~/pod042_keikoku.ogg ~/pod042_houkoku.ogg)
+    paplay ${sound}  # could use & and () here to subshell and background it, but the slight delay is fine
+}
+alias pw="podwatch"
+
 bind 'set bell-style none'  # disable the bell when using tab completion
 
 # For quickly grabbing the newest or oldest files with `ls`
