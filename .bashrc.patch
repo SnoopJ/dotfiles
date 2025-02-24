@@ -54,11 +54,32 @@ function beep {
 # Run a command and Pod 042 or Pod 153 will tell you when it's done.
 # It's basically the beep() function but it plays a sound file instead.
 function podwatch {
-    "$@"
+    local OPTIND OPTARG arg
+    while getopts ":p:" arg; do
+      case "${arg}" in
+        p) pid="$OPTARG"
+#            printf "Got -p argument for PID $pid\n"
+            ;;
+        *) printf "Usage: %s: [-p PID] [cmd]\n" $0
+           return
+            ;;
+      esac
+    done
+    shift $((OPTIND-1))
+
+    if [ ! -z "$pid" ]; then
+        # Portable not-this-shell process waiting courtesy of StackOverflow user Remember Monica:
+        # https://unix.stackexchange.com/a/626632
+        kill -s 0 "$pid" 2>/dev/null && printf "monitoring process $pid\n" && while kill -s 0 "$pid" 2>/dev/null; do sleep 1; done
+    else
+        "$@"
+    fi
+
     sound=$(shuf -n1 -e pod153_keikoku.ogg pod153_houkoku.ogg pod042_keikoku.ogg pod042_houkoku.ogg)
     paplay ${DOTFILES_DIR}/sfx/${sound}  # could use & and () here to subshell and background it, but the slight delay is fine
 }
 alias pw="podwatch"
+complete -o bashdefault podwatch
 
 bind 'set bell-style none'  # disable the bell when using tab completion
 
