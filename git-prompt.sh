@@ -518,6 +518,12 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
+    # jgerity: show commit date of HEAD in status line
+    if [ -z "${GIT_PS1_NO_COMMIT_DATE:+x}" ]
+    then
+        commitdate=" $(git show --no-patch --format="%cs" HEAD)"
+    fi
+
     # jgerity: add symbol for uninitialized top-level submodules (does *not* recurse)
     if [ -z "${GIT_PS1_NO_CHECK_SUBMODULES:+x}" ]
     then
@@ -543,7 +549,7 @@ __git_ps1 ()
 
 
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p${submodicon}${stashicon}"
+	local gitstring="$c$b$commitdate${f:+$z$f}$r$p${submodicon}${stashicon}"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then
